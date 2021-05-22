@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JSON</title>
+</head>
+
+<body>
+    <h1>Learn JSON </h1>
+    <script type="text/javascript">
+        var people = {
+        "person1" : {
+            "firstName": "John",
+            "lastName": "Smith",
+            "age": "25",
+            "checkedin": true,            
+            "Cars" : [
+                {"make": "Mustang", 
+                "year":"2018", 
+                "color":"red"}, 
+                {"make": "Mercedes", 
+                "year":"2020", 
+                "color":"black"}],
+            "Hobbies":[
+                "doing stuff",
+                "sleeping"
+            ]
+            },
+        "person2" : {
+            "firstName": "Joan",
+            "lastName": "Smith",
+            "age": "35",
+            "checkedin": false,
+            };
+
+            var str1="car";
+            var cnt=1;
+        };
+        console.log(people.person2[str1+cnt])
+        cnt++
+        console.log(people)
+    </script>
+</body>
+
+</html>
