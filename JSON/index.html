@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JSON</title>
+</head>
+
+<body>
+    <h1>Learn JSON </h1>
+    <div id="output"></div>
+    <script type="text/javascript">
+    //https://randomuser.me/api/
+
+        let data = {"results":[{"gender":"male","name":{"title":"Monsieur","first":"Filipe","last":"Fournier"},"location":{"street":{"number":1601,"name":"Rue Cyrus-Hugues"},"city":"Cuarnens","state":"St. Gallen","country":"Switzerland","postcode":6116,"coordinates":{"latitude":"-52.3822","longitude":"-161.2311"},"timezone":{"offset":"-2:00","description":"Mid-Atlantic"}},"email":"filipe.fournier@example.com","login":{"uuid":"456273bf-ac55-435d-9429-303d97165326","username":"blackmeercat314","password":"dalton","salt":"NVwvnt1Z","md5":"8550b144102a5b90b3354f225ed2958c","sha1":"2e90f588ad61824281833fc8f13b730624259164","sha256":"af9551675cb424d07658c290f61dcce7e2505d45489e49ad3174bd9238ce4c5e"},"dob":{"date":"1947-07-10T15:05:15.810Z","age":74},"registered":{"date":"2005-10-17T07:37:54.886Z","age":16},"phone":"077 143 21 47","cell":"079 087 36 37","id":{"name":"AVS","value":"756.1159.9192.45"},"picture":{"large":"https://randomuser.me/api/portraits/men/83.jpg","medium":"https://randomuser.me/api/portraits/med/men/83.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/83.jpg"},"nat":"CH"}],"info":{"seed":"5f6b4d9bd541144b","results":1,"page":1,"version":"1.3"}}
+    
+        let dataJSON = JSON.parse(data)
+        let person = dataJSON.results[0];
+        let output = document.querySelector("#output");
+        let html = person.name.first + ' ' + person.name.last
+
+        html += '<img src=" '+person.picture.thumbnail+ '">'
+        output.innerHTML = html;
+        console.log(person.name.first + ' ' + person.name.last)
+        console.log(person.picture.thumbnail)
+
+        let strMe = JSON.stringify(dataJSON)
+        console.log(strMe)
+
+        
+    </script>
+</body>
+
+</html>

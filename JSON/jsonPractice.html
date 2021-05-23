@@ -8,38 +8,87 @@
 
 <body>
     <h1>Learn JSON </h1>
+    <div id="output"></div>
     <script type="text/javascript">
-        var people = {
-        "person1" : {
-            "firstName": "John",
-            "lastName": "Smith",
-            "age": "25",
-            "checkedin": true,            
-            "Cars" : [
-                {"make": "Mustang", 
-                "year":"2018", 
-                "color":"red"}, 
-                {"make": "Mercedes", 
-                "year":"2020", 
-                "color":"black"}],
-            "Hobbies":[
-                "doing stuff",
-                "sleeping"
-            ]
-            },
-        "person2" : {
-            "firstName": "Joan",
-            "lastName": "Smith",
-            "age": "35",
-            "checkedin": false,
-            };
+        // var people = {
+        // "person1" : {
+        //     "firstName": "John",
+        //     "lastName": "Smith",
+        //     "age": "25",
+        //     "checkedin": true,            
+        //     "Cars" : [
+        //         {"make": "Mustang", 
+        //         "year":"2018", 
+        //         "color":"red"}, 
+        //         {"make": "Mercedes", 
+        //         "year":"2020", 
+        //         "color":"black"}],
+        //     "Hobbies":[
+        //         "doing stuff",
+        //         "sleeping"
+        //     ]
+        //     },
+        // "person2" : {
+        //     "firstName": "Joan",
+        //     "lastName": "Smith",
+        //     "age": "35",
+        //     "checkedin": false,
+        //     };
+        // };
 
-            var str1="car";
-            var cnt=1;
+        var myObj = {
+           "friends": [{
+               "firstName": "Mike",
+               "lastName": "Jones"
+           },{
+            "firstName": "John",
+            "lastName": "Smith"
+           },{
+            "firstName": "LightSkin",
+            "lastName": "Keisha"
+            },{
+            "firstName": "Mylieke",
+            "lastName": "Teel"
+           }]
         };
-        console.log(people.person2[str1+cnt])
-        cnt++
-        console.log(people)
+        var users = myObj.friends;
+        var html = "";
+        
+
+        //add a new object to the array inbetween specific indices
+        myObj.friends.splice(1,0,{
+            "firstName": "New",
+            "lastName": "Person"
+        })
+        
+        myObj.friends.push({
+            "firstName": "AnotherNew",
+            "lastName": "Person"
+        })
+
+        myObj.friends.pop()
+
+        console.log(myObj.friends.slice(1,4))
+
+        // const reversed = myObj.friends.reverse()
+        // console.log(reversed)
+        
+        //Can use different types of for loops or while loops
+        // for (var x in users){
+        //     html += (Number(x)+1) + ' . ' + users[x].firstName  + ' ' + users[x].lastName 
+        //     + '<br>'
+        // }
+
+        for (x=0; x<users.length; x++){
+            html += (Number(x)+1) + ' . ' + users[x].firstName  + ' ' + users[x].lastName 
+            + '<br>'
+        }
+
+
+        document.getElementById('output').innerHTML = html
+        console.log(myObj)
+
+        
     </script>
 </body>
 
